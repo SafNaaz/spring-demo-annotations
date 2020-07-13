@@ -8,9 +8,17 @@ public class TennisCoach implements Coach {
 	
 	FortuneService fortuneService;
 	
-	@Autowired
+	/*@Autowired
 	public TennisCoach(FortuneService fortuneService) {
 		super();
+		this.fortuneService = fortuneService;
+	}*/
+	
+	public TennisCoach() {
+	}
+	
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 
