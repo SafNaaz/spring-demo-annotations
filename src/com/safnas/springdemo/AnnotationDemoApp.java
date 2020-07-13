@@ -11,6 +11,9 @@ public class AnnotationDemoApp {
 		
 		System.out.println(theCoach.getDailyWorkout());
 		
+		//calling autowired method
+		System.out.println(theCoach.getDailyFortune());
+		
 		applicationContext.close();
 	}
 
