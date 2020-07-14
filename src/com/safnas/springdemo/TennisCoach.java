@@ -1,18 +1,32 @@
 package com.safnas.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	@Autowired
 	@Qualifier("fileFortuneService")
 	FortuneService fortuneService;
 	
 	public TennisCoach() {
+	}
+	
+	//init method
+	@PostConstruct
+	public void doMyStartUpStuff(){
+		System.out.println("inside doMyStartUpStuff");
+	}
+	
+	//destroy method
+	@PreDestroy
+	public void doMyDestroytuff(){
+		System.out.println("inside doMyDestroytuff");
 	}
 	
 	/*@Autowired
